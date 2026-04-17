@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Aura 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffd6e7, #ffeef5);
+  text-align: center;
+  overflow: hidden;
+}.container { margin-top: 80px; animation: fadeIn 2s ease; }
+
+h1 { color: #ff4da6; font-size: 36px; }
+
+h2 { color: #ff66b2; }
+
+p { max-width: 300px; margin: auto; color: #444; }
+
+button { margin-top: 20px; padding: 12px 25px; border: none; border-radius: 25px; background: #ff66b2; color: white; font-size: 16px; cursor: pointer; transition: 0.3s; }
+
+button:hover { transform: scale(1.1); background: #ff3385; }
+
+.hidden { display: none; }
+
+.gift-box { font-size: 80px; animation: bounce 2s infinite; }
+
+@keyframes bounce { 0%,100% {transform: translateY(0);} 50% {transform: translateY(-15px);} }
+
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+.flower { position: absolute; font-size: 20px; animation: fall linear infinite; }
+
+@keyframes fall { 0% {transform: translateY(-10%);} 100% {transform: translateY(110vh);} }
+
+.card { background: white; margin: 20px; padding: 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); animation: fadeIn 1s ease; }
+
+</style>
+</head><body><div class="container">
+  <h1>🎉 Happy Birthday 🎉</h1>
+  <h2>Aura Aseng 💖</h2>  <div class="gift-box">🎁</div><button onclick="openGift()">Buka Hadiah 🎁</button>
+
+  <div id="message" class="hidden card">
+    <p>
+    Yeyy Aura sekarang resmi mau 15 tahun 😆✨<br><br>Semoga makin cantik (ini udah pasti 😏),
+makin lucu, makin rajin (tolong ya 😤),
+dan makin bahagia setiap hari 💕<br><br>
+
+Jangan sering ngambek ya 😜
+tapi kalau ngambek juga tetep lucu sih 🧸🌸<br><br>
+
+Semoga semua yang kamu impikan satu-satu tercapai 🎯✨<br><br>
+
+Tetap jadi Aura yang seru, random, dan bikin hari orang jadi lebih asik 😆💖<br><br>
+
+Dari: <b>Abil 😎</b>
+</p>
+
+  </div>
+</div><audio autoplay loop>
+  <source src="https://files.catbox.moe/6k5l9p.mp3" type="audio/mpeg">
+</audio><script>
+function openGift() {
+  document.getElementById("message").classList.remove("hidden");
+}
+
+// bunga aesthetic
+for(let i=0; i<30; i++){
+  let flower = document.createElement("div");
+  flower.innerHTML = Math.random() > 0.5 ? "🌸" : "✨";
+  flower.className = "flower";
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.animationDuration = (3 + Math.random()*5) + "s";
+  document.body.appendChild(flower);
+}
+</script></body>
+</html>
